@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.love.sxx.mapper.UserDao">
+
+    <select id="userEntityList" resultType="com.example.love.sxx.entity.UserEntity">
+    select * from sxx_user
+    </select>
+
+    <insert id="userAdd">
+		INSERT INTO sxx_user(id,idcard,username,password,sex)VALUES(#{id},#{idcard},#{username},#{password},#{sex})
+	</insert>
+
+    <delete id="userDel" parameterType="java.lang.Integer">
+    delete from sxx_user
+    where id = #{id}
+  </delete>
+
+    <select id="userXq" parameterType="java.lang.Integer" resultType="com.example.love.sxx.entity.UserEntity">
+        select *
+        from sxx_user
+        where id = #{id}
+    </select>
+
+</mapper>
+
